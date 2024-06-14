@@ -1,0 +1,21 @@
+[
+    {
+      "title": "SUNDAY SPECIAL",
+      "detail": "Save 500 LKR for every 3000 LKR spent",
+      "imageUrl": "images/promo4.jpg",
+      "postedOn": "9 days ago"
+    },
+    {
+      "title": "CHRISTMAS SPECIAL",
+      "detail": "Buy one COFFEE and get the second FREE",
+      "imageUrl": "images/promo1.jpg",
+      "postedOn": "4 hours ago"
+    },
+    {
+      "title": "SUNDAY SPECIAL",
+      "imageUrl": "images/promo2.jpg",
+      "detail": "Buy one COFFEE and get the second FREE",
+      "postedOn": "Yesterday"
+    }
+  ]
+  

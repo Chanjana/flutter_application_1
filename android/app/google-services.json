@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "795379289511",
+    "project_id": "fireconnect-fdb42",
+    "storage_bucket": "fireconnect-fdb42.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:795379289511:android:82693c2fb3682e30e8fa82",
+        "android_client_info": {
+          "package_name": "com.example.cafe_americano_two"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "795379289511-ihdr36q1884fchch4raa780grghg6uir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cafe_americano_two",
+            "certificate_hash": "9246a620f4a7993958c7eb9341b3883b2483870e"
+          }
+        },
+        {
+          "client_id": "795379289511-15ouqgao37nd92pkkla4cmu9hbdcf5ge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJSRTiYNw40tyMZPpUDT1GK2OZm-hZotY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "795379289511-15ouqgao37nd92pkkla4cmu9hbdcf5ge.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "795379289511-s1jpr7bfmdkecuc7r6g26o1rsm73u2gj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.cafeAmericanoTwo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
