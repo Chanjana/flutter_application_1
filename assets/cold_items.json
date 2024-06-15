@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Ice Coffee",
+    "detail": "1300 LKR",
+    "imageUrl": "images/coffee3.jpg",
+    "description": "Chilled coffee served with ice."
+  },
+  {
+    "title": "Iced Americano",
+    "detail": "1300 LKR",
+    "imageUrl": "images/coffee2.jpg",
+    "description": "Espresso with cold water, giving it a refreshing taste."
+  }
+]

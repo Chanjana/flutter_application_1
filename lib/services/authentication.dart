@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -12,7 +14,7 @@ class AuthMethod {
     required String password,
     required String name,
   }) async {
-    String res = "Some error Occurred";
+    String res = "Error Occurred";
     try {
       if (email.isNotEmpty || password.isNotEmpty || name.isNotEmpty) {
         // register user in auth with email and password
@@ -29,6 +31,8 @@ class AuthMethod {
         });
 
         res = "success";
+      } else {
+        res = "Please enter all the fields";
       }
     } catch (err) {
       return err.toString();
@@ -41,7 +45,7 @@ class AuthMethod {
     required String email,
     required String password,
   }) async {
-    String res = "Some error Occurred";
+    String res = "Error Occurred";
     try {
       if (email.isNotEmpty || password.isNotEmpty) {
         // logging in user with email and password
@@ -61,6 +65,6 @@ class AuthMethod {
 
   // for sighout
   signOut() async {
-    // await _auth.signOut();
+    await _auth.signOut();
   }
 }

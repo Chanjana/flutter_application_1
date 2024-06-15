@@ -1,6 +1,10 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_field
+
 import 'package:cafe_americano_two/services/google_auth.dart';
 import 'package:cafe_americano_two/views/item_details_screen.dart';
+import 'package:cafe_americano_two/views/recomendations_screen.dart';
 import 'package:cafe_americano_two/views/settings_screen.dart';
+import 'package:cafe_americano_two/widgets/weather_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shake/shake.dart';
@@ -113,10 +117,17 @@ class _HomeScreenState extends State<HomeScreen>
                   child: ListTile(
                     leading: Icon(Icons.info, color: Colors.orange),
                     title: Text(
-                      'ABOUT',
+                      'RECOMENDATIONS',
                       style: TextStyle(
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RecomendationsScreen()),
+                      );
+                    },
                   ),
                 ),
                 Padding(
@@ -179,6 +190,9 @@ class _HomeScreenState extends State<HomeScreen>
                       color: Colors.white),
                   textAlign: TextAlign.center,
                 ),
+                SizedBox(height: 16),
+                WeatherWidget(),
+                SizedBox(height: 16),
                 Expanded(
                   child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

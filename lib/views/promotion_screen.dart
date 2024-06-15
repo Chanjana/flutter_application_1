@@ -47,8 +47,8 @@ class _PromotionScreenState extends State<PromotionScreen>
             borderSide: BorderSide(color: Color(0xFFE57734)),
           ),
           tabs: [
-            Tab(text: "Local"),
-            Tab(text: "Network"),
+            Tab(text: "Every Day Offers"),
+            Tab(text: "Latest Offers"),
           ],
         ),
       ),

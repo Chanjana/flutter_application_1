@@ -45,6 +45,13 @@ dependencies:
   image_picker: ^1.0.8
   shake: ^2.1.0
   http: ^1.2.1
+  geolocator: ^7.1.0
+  geocoding: ^2.0.5
+  lottie: ^2.4.0
+  
+ 
+  
+  
 
 dev_dependencies:
   flutter_test:
@@ -87,6 +94,12 @@ flutter:
     - images/coffee5.jpg
     - images/profile.jpg
     - assets/offers.json
+    - assets/sunny.json
+    - assets/cloud.json
+    - assets/rain.json
+    - assets/thunder.json
+    - assets/hot_items.json
+    - assets/cold_items.json
 
   # To add assets to your application, add an assets section, like this:
   # assets:

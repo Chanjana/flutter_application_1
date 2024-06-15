@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Latte",
+    "detail": "1500 LKR",
+    "imageUrl": "images/coffee1.jpeg",
+    "description": "A delicious blend of espresso and steamed milk."
+  },
+  {
+    "title": "Americano",
+    "detail": "1300 LKR",
+    "imageUrl": "images/coffee2.jpg",
+    "description": "Espresso with hot water, giving it a similar strength to, but different flavor from, brewed coffee."
+  },
+  {
+    "title": "Mocha",
+    "detail": "1500 LKR",
+    "imageUrl": "images/coffee5.jpg",
+    "description": "A chocolate-flavored variant of a caffe latte."
+  },
+  {
+    "title": "Cortado",
+    "detail": "1900 LKR",
+    "imageUrl": "images/coffee1.jpeg",
+    "description": "An espresso cut with a small amount of warm milk."
+  }
+]
