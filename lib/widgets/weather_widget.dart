@@ -12,10 +12,11 @@ class WeatherWidget extends StatefulWidget {
 }
 
 class _WeatherWidgetState extends State<WeatherWidget> {
-  final _weatherService = WeatherService('8f2e85c9651743e65c28d45143e95460');
-  Weather? _weather;
+  final _weatherService = WeatherService(
+      '8f2e85c9651743e65c28d45143e95460'); // Instance of WeatherService initialized with an API key
+  Weather? _weather; // Nullable Weather object to hold fetched weather data
 
-  // Fetch weather
+  // Fetch weather data
   _fetchWeather() async {
     String cityName = await _weatherService.getCurrentCity();
     try {
@@ -28,6 +29,7 @@ class _WeatherWidgetState extends State<WeatherWidget> {
     }
   }
 
+  // Determines which weather animation to display based on mainCondition
   String getWeatherAnimation(String? mainCondition) {
     if (mainCondition == null) return 'assets/sunny.json';
 
@@ -55,7 +57,7 @@ class _WeatherWidgetState extends State<WeatherWidget> {
   @override
   void initState() {
     super.initState();
-    _fetchWeather();
+    _fetchWeather(); // Fetch weather data when the widget is initialized
   }
 
   @override
@@ -77,7 +79,8 @@ class _WeatherWidgetState extends State<WeatherWidget> {
         children: [
           if (_weather != null) ...[
             Lottie.asset(
-              getWeatherAnimation(_weather?.mainCondition),
+              getWeatherAnimation(_weather
+                  ?.mainCondition), // Load animation based on weather condition
               width: 120,
               height: 120,
               fit: BoxFit.fill,

@@ -38,11 +38,13 @@ class _HomeScreenState extends State<HomeScreen>
     super.initState();
 
     detector = ShakeDetector.autoStart(
+      // This is the callback function that gets called whenever a shake is detected
       onPhoneShake: () {
         final newQuote = (List.of(quotes)
-              ..remove(quote)
-              ..shuffle())
+              ..remove(quote) // Remove the current quote
+              ..shuffle()) // Shuffle the remaining quotes
             .first;
+        // Update the state with the new quote
         setState(() {
           this.quote = newQuote;
         });
@@ -59,7 +61,8 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   void dispose() {
     _tabController.dispose();
-    detector.stopListening();
+    detector
+        .stopListening(); // Stop the ShakeDetector from listening for shake events to avoid memory leaks
     super.dispose();
   }
 

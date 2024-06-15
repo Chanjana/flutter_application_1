@@ -5,14 +5,18 @@ import 'package:flutter/material.dart';
 class OffersLocalPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
+        // Use FutureBuilder to handle the asynchronous operation of loading offers
         body: FutureBuilder<List<Offer>>(
-          future: OffersApi.getOffersLocally(context),
+          future: OffersApi.getOffersLocally(
+              context), // Calling the method to get offers locally
           builder: (context, snapshot) {
             final offers = snapshot.data;
 
             switch (snapshot.connectionState) {
               case ConnectionState.waiting:
-                return Center(child: CircularProgressIndicator());
+                return Center(
+                    child:
+                        CircularProgressIndicator()); // Show a loading indicator while waiting
               default:
                 if (snapshot.hasError) {
                   return Center(child: Text('Some error occurred!'));
@@ -54,7 +58,8 @@ class OffersLocalPage extends StatelessWidget {
                             overflow: TextOverflow.ellipsis,
                           ),
                           const SizedBox(height: 8),
-                          Text("${item.detail} · ${item.postedOn}",
+                          Text(
+                              "${item.detail} · ${item.postedOn}", // Detail and posted date of the offer
                               style: Theme.of(context).textTheme.bodySmall),
                           const SizedBox(height: 8),
                           Row(

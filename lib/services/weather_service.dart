@@ -9,21 +9,26 @@ class WeatherService {
   static const BASE_URL = 'https://api.openweathermap.org/data/2.5/weather';
   final String apiKey;
 
+  // Constructor to initialize the WeatherService with an API key
   WeatherService(this.apiKey);
 
+  // Method to fetch weather data for a specified city
   Future<Weather> getWeather(String cityName) async {
     final response = await http
         .get(Uri.parse('$BASE_URL?q=$cityName&appid=$apiKey&units=metric'));
 
     if (response.statusCode == 200) {
-      return Weather.fromJson(jsonDecode(response.body));
+      return Weather.fromJson(jsonDecode(response
+          .body)); // Parse the JSON response body and convert it into a Weather object
     } else {
       throw Exception('Failed to load weather data');
     }
   }
 
+  // Method to retrieve the current city based on device's location
   Future<String> getCurrentCity() async {
-    LocationPermission permission = await Geolocator.checkPermission();
+    LocationPermission permission = await Geolocator
+        .checkPermission(); // Check the permission status for accessing device location
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
     }

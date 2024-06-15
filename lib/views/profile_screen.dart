@@ -186,20 +186,24 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   // Gallery
   Future<void> _pickImageFromGallery() async {
+    // Open the image picker to select an image from gallery
     final returnImage =
         await ImagePicker().pickImage(source: ImageSource.gallery);
     if (returnImage == null) return;
+    // Update the state with the selected image
     setState(() {
       selectedImage = File(returnImage.path);
-      _image = File(returnImage.path).readAsBytesSync();
+      _image = File(returnImage.path)
+          .readAsBytesSync(); // Read the image file as bytes and assign it to _image
     });
     Navigator.of(context).pop();
   }
 
   // Camera
   Future<void> _pickImageFromCamera() async {
-    final returnImage =
-        await ImagePicker().pickImage(source: ImageSource.camera);
+    final returnImage = await ImagePicker().pickImage(
+        source: ImageSource
+            .camera); //only difference betwwen the two methods is that the image picker opens camera/gallery
     if (returnImage == null) return;
     setState(() {
       selectedImage = File(returnImage.path);

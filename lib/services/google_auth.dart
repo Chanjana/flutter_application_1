@@ -7,16 +7,18 @@ class FirebaseServices {
   // dont't gorget to add firebasea auth and google sign in package
   signInWithGoogle() async {
     try {
-      final GoogleSignInAccount? googleSignInAccount =
-          await googleSignIn.signIn();
+      final GoogleSignInAccount? googleSignInAccount = await googleSignIn
+          .signIn(); // Prompt user to select a Google account for sign-in
       if (googleSignInAccount != null) {
         final GoogleSignInAuthentication googleSignInAuthentication =
-            await googleSignInAccount.authentication;
+            await googleSignInAccount
+                .authentication; // Retrieve authentication tokens
         final AuthCredential authCredential = GoogleAuthProvider.credential(
           accessToken: googleSignInAuthentication.accessToken,
           idToken: googleSignInAuthentication.idToken,
-        );
-        await auth.signInWithCredential(authCredential);
+        ); // Create AuthCredential using Google authentication tokens
+        await auth.signInWithCredential(
+            authCredential); // Sign in to Firebase with AuthCredential
       }
     } on FirebaseAuthException catch (e) {
       print(e.toString());
@@ -25,7 +27,7 @@ class FirebaseServices {
 
 // for sign out
   googleSignOut() async {
-    await googleSignIn.signOut();
-    auth.signOut();
+    await googleSignIn.signOut(); // Sign out from GoogleSignIn
+    auth.signOut(); // Sign out from FirebaseAuth
   }
 }

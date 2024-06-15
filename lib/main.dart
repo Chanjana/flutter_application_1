@@ -9,7 +9,7 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding
-      .ensureInitialized(); // Ensures that binding is initialized before Firebase initialization
+      .ensureInitialized(); // To ensure that binding is initialized before Firebase initialization
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -31,8 +31,10 @@ class MyApp extends StatelessWidget {
         stream: FirebaseAuth.instance.authStateChanges(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
+            // If the user is authenticated, navigate to the main home screen
             return const MainHomeScreen();
           } else {
+            // If the user is not authenticated, navigate to the login screen
             return const LoginScreen();
           }
         },

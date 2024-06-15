@@ -64,7 +64,7 @@ class RecomendationsScreenState extends State<RecomendationsScreen> {
           child: Column(
             children: [
               if (_weather != null) ...[
-                WeatherWidget(),
+                WeatherWidget(), //calling the widget
                 SizedBox(height: 16),
               ] else ...[
                 CircularProgressIndicator(),
@@ -87,7 +87,8 @@ class RecomendationsScreenState extends State<RecomendationsScreen> {
                     final item = _items[index];
                     return GestureDetector(
                       onTap: () {
-                        _showItemDetails(context, item);
+                        _showItemDetails(context,
+                            item); //when clicked we call the method that shows master details in pop-up
                       },
                       child: Card(
                         margin: const EdgeInsets.all(8.0),
